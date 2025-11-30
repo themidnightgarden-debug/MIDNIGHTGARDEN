@@ -16,9 +16,159 @@
     .nav{display:flex;align-items:center;justify-content:space-between;max-width:1180px;margin:0 auto;padding:0.8rem 1.5rem}
     .brand-title{font-family:'Cinzel',serif;font-weight:600;letter-spacing:0.22em;font-size:1rem;text-transform:uppercase}
     .brand-sub{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-soft)}
-    ... 
+    .nav-links{display:flex;gap:1.2rem;font-size:0.75rem;text-transform:uppercase;letter-spacing:0.18em}
+    .panel{background:radial-gradient(circle at top left, rgba(181,139,213,0.18), transparent 55%), linear-gradient(to bottom, rgba(30,21,38,0.98), rgba(7,4,10,0.98));border-radius:22px;border:1px solid var(--border-soft);padding:2.3rem 2rem;position:relative;overflow:hidden}
+    .panel-content{position:relative;z-index:1}
+    .hero-kicker{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-soft);display:inline-flex;gap:0.5rem;margin-bottom:0.85rem}
+    .hero-title{font-family:'Cinzel',serif;font-size:clamp(2.4rem,5vw,3.3rem);letter-spacing:0.22em;text-transform:uppercase;margin-bottom:0.25rem}
+    .hero-subtitle{font-size:0.82rem;text-transform:uppercase;letter-spacing:0.26em;color:var(--text-soft);margin-bottom:1.7rem}
+    .hero-body{max-width:32rem;font-size:0.96rem;color:var(--text-soft);margin-bottom:1.8rem}
+    .btn{border-radius:999px;padding:0.65rem 1.7rem;font-size:0.78rem;text-transform:uppercase;letter-spacing:0.18em;display:inline-flex;align-items:center;gap:0.5rem;border:1px solid var(--accent);background:transparent;cursor:pointer;transition:all 0.22s}
+    .btn-primary{background:radial-gradient(circle at top,#d9c0f0,var(--accent));color:#1d1326;box-shadow:0 0 22px rgba(181,139,213,0.45);border-color:transparent}
+    .btn-ghost{color:var(--text-soft);background:rgba(30,21,38,0.7)}
+    .section-heading{font-family:'Cinzel',serif;font-size:1.5rem;text-transform:uppercase;letter-spacing:0.16em;margin-bottom:0.4rem}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
+    @media (max-width:880px){.grid-3{grid-template-columns:minmax(0,1fr)}}
+    .card{background:radial-gradient(circle at top left, rgba(181,139,213,0.16), rgba(30,21,38,0.96));border:1px solid rgba(181,139,213,0.28);border-radius:18px;padding:1.35rem 1.2rem 1.5rem;position:relative;overflow:hidden}
+    .two-col{display:grid;grid-template-columns:minmax(0,2.8fr) minmax(0,2fr);gap:2rem;align-items:flex-start}
+    .list-soft{list-style:none;padding-left:0;font-size:0.88rem;color:var(--text-soft)}
+    .pill-row{display:flex;gap:0.45rem;margin-top:0.8rem;flex-wrap:wrap}
+    .pill{font-size:0.72rem;padding:0.22rem 0.7rem;background:rgba(255,255,255,0.04);border-radius:999px;color:var(--text-soft)}
+    footer{border-top:1px solid rgba(181,139,213,0.18);margin-top:3rem;padding:2rem 1.5rem 1rem;font-size:0.76rem;color:var(--text-soft)}
   </style>
 </head>
 <body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-title">MIDNIGHT GARDEN</div>
+        <div class="brand-sub">Digital Apothecary</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#wellness">Wellness</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <div class="container">
+    <main>
+      <section id="home" class="anchor-offset">
+        <div class="panel">
+          <div class="panel-content">
+            <div class="hero-kicker"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px rgba(181,139,213,0.8)"></span>Dark Botanical Studio</div>
+            <h1 class="hero-title">Midnight Garden</h1>
+            <div class="hero-subtitle">Where witches plant their dreams</div>
+            <p class="hero-body"><strong>Midnight Garden</strong> is a one-of-a-kind digital apothecary. We craft botanical recipes, self-care pods and mystical art prints for women who lead with intuition and bloom in the night.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#products">Shop the collection</a>
+              <a class="btn btn-ghost" href="#wellness">Explore wellness pods</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="products" class="anchor-offset">
+        <div class="panel">
+          <div class="panel-content">
+            <div class="section-kicker" style="font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-soft)">The Boutique</div>
+            <h2 class="section-heading">Shop our Potions & Prints</h2>
+            <p class="section-body">Each product line is designed to hold your magic and your reality: the teas and the deadlines, the shadow work and the spreadsheets. Choose your path below.</p>
+            <div class="grid-3">
+              <article class="card">
+                <div class="card-content">
+                  <div class="card-label" style="font-size:0.62rem;color:var(--text-soft)">Collection I</div>
+                  <h3 class="card-title">Herbal Blends & Recipes</h3>
+                  <p class="card-text">A digital cookbook of teas, incense and potion recipes inspired by apothecaries. Each blend comes with correspondences and ritual notes.</p>
+                  <div class="pill-row"><span class="pill">Dark Moon Tea</span><span class="pill">Protection Incense</span><span class="pill">Love Elixir</span></div>
+                  <a class="card-link" href="#">View blends →</a>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-content">
+                  <div class="card-label" style="font-size:0.62rem;color:var(--text-soft)">Collection II</div>
+                  <h3 class="card-title">Self-Care & Wellness Pods</h3>
+                  <p class="card-text">Guided audio rituals and meditative prompts delivered as digital pods. Tune in for grounding, shadow work or lunar check-ins.</p>
+                  <div class="pill-row"><span class="pill">Grounding Meditation</span><span class="pill">Shadow Journal Pod</span><span class="pill">Moon Sync Ritual</span></div>
+                  <a class="card-link" href="#wellness">Listen now →</a>
+                </div>
+              </article>
+              <article class="card">
+                <div class="card-content">
+                  <div class="card-label" style="font-size:0.62rem;color:var(--text-soft)">Collection III</div>
+                  <h3 class="card-title">Botanical & Occult Prints</h3>
+                  <p class="card-text">Printable art inspired by poisonous herbs, lunar cycles and occult diagrams.</p>
+                  <div class="pill-row"><span class="pill">Venus Flytrap</span><span class="pill">Lunar Diagram</span><span class="pill">Sigil Series</span></div>
+                  <a class="card-link" href="#">View prints →</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="wellness" class="anchor-offset">
+        <div class="panel">
+          <div class="panel-content two-col">
+            <div>
+              <div class="section-kicker">Inner alchemy</div>
+              <h2 class="section-heading">Self-Care & Wellness Pods</h2>
+              <p class="section-body">Digital audio pods that combine guided meditation, breathwork and journaling prompts. Each pod includes a PDF companion.</p>
+              <ul class="list-soft">
+                <li><span class="bullet" style="width:4px;height:4px;background:var(--accent);display:inline-block;margin-right:0.6rem"></span><strong>Grounding Meditation:</strong> 10-minute grounding.</li>
+                <li><span class="bullet" style="width:4px;height:4px;background:var(--accent);display:inline-block;margin-right:0.6rem"></span><strong>Shadow Journal Pod:</strong> gentle prompts for reflection.</li>
+                <li><span class="bullet" style="width:4px;height:4px;background:var(--accent);display:inline-block;margin-right:0.6rem"></span><strong>Moon Sync Ritual:</strong> align with lunar phases.</li>
+              </ul>
+            </div>
+            <div>
+              <p class="section-body">Pods are delivered via instant digital download and pair beautifully with a cup of Midnight Garden tea.</p>
+              <a class="btn btn-primary" href="#">Explore Pods</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="anchor-offset">
+        <div class="panel">
+          <div class="panel-content two-col">
+            <div>
+              <div class="section-kicker">The Maker</div>
+              <h2 class="section-heading">Behind the Garden</h2>
+              <p class="section-body">I’m Cydnie, founder of Midnight Garden—an ordained minister, notary and digital designer. This studio was created for women who bloom in the dark.</p>
+            </div>
+            <div>
+              <ul class="list-soft">
+                <li><span class="bullet" style="width:4px;height:4px;background:var(--accent);display:inline-block;margin-right:0.6rem"></span>Ordained minister & ceremony writer</li>
+                <li><span class="bullet" style="width:4px;height:4px;background:var(--accent);display:inline-block;margin-right:0.6rem"></span>Kentucky notary & loan signing agent</li>
+                <li><span class="bullet" style="width:4px;height:4px;background:var(--accent);display:inline-block;margin-right:0.6rem"></span>Digital studio owner & designer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="anchor-offset">
+        <div class="panel">
+          <div class="panel-content two-col">
+            <div>
+              <div class="section-kicker">Contact</div>
+              <h2 class="section-heading">Enter the Garden</h2>
+              <p class="section-body">Questions about products or collaborations? Email <a href="mailto:TheeMidnightGarden@gmail.com">TheeMidnightGarden@gmail.com</a></p>
+            </div>
+            <div>
+              <p class="section-body">We aim to respond within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <footer>
+    <div class="footer-inner" style="max-width:1180px;margin:0 auto;padding:2rem 1.5rem 1rem;display:flex;flex-wrap:wrap;gap:1.7rem;justify-content:space-between">
+      <div>
+        <h4 style="font-size:0.78rem;text-transform:uppercase;color:var(--text-main)">Midnight Garden</h4>
+        <p style="color:var(--text-soft)">Digital apothecary for witches who bloom in the dark.</p>
+      </div>
+      <div style="text-align:right;color:var(--text-soft);font-size:0.76rem">© 2025 Midnight Garden</div>
+    </div>
+  </footer>
 </body>
 </html>
