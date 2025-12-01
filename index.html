@@ -2,79 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Midnight Garden · By Murphy Made</title>
+  <title>Midnight Garden by Murphy Made – Dark Feminine Print-on-Demand</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral+SC:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #050507;
-      --bg-soft: #0b090e;
-      --ink: #f4efe6;
-      --ink-soft: #c7bfb1;
-      --accent-gold: #c5a36a;
-      --accent-blood: #7b1f2b;
-      --accent-plum: #3d193f;
-      --border-soft: rgba(197,163,106,0.25);
+      --bg: #050308;
+      --bg-soft: #120a18;
+      --panel: #110b15;
+      --panel-alt: #1a111f;
+      --ink: #f7f1e8;
+      --muted: #c3b5cf;
+      --gold: #d6b271;
+      --deep-gold: #a87a35;
+      --rose: #b1485b;
+      --blood: #7a1224;
+      --green: #5b8a6a;
+      --purple: #402444;
+      --border-soft: rgba(214, 178, 113, 0.25);
+      --shadow-soft: 0 26px 80px rgba(0, 0, 0, 0.76);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      font-family: "Lora", serif;
-      background: radial-gradient(circle at top, #15101c 0, var(--bg) 55%, #020204 100%);
+      font-family: 'Spectral SC', serif;
+      background:
+        radial-gradient(circle at top left, #221228 0, #050308 60%, #000 100%);
       color: var(--ink);
-      line-height: 1.6;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
     /* Layout */
     header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: linear-gradient(to bottom, rgba(5,5,7,0.97), rgba(5,5,7,0.9), transparent);
-      border-bottom: 1px solid rgba(197,163,106,0.25);
-      backdrop-filter: blur(12px);
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5, 3, 8, 0.96),
+        rgba(5, 3, 8, 0.9),
+        transparent
+      );
+      border-bottom: 1px solid rgba(214, 178, 113, 0.18);
     }
 
     .nav {
-      max-width: 1120px;
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 0.7rem 1.5rem;
+      padding: 0.9rem 1.75rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 1.5rem;
+      gap: 1rem;
     }
 
     .brand-lockup {
       display: flex;
       flex-direction: column;
-      gap: 0.12rem;
+      gap: 0.2rem;
     }
 
     .brand-main {
-      font-family: "Cinzel", serif;
-      letter-spacing: 0.20em;
+      font-family: 'Cinzel', serif;
       font-weight: 600;
+      letter-spacing: 0.22em;
       font-size: 0.95rem;
       text-transform: uppercase;
     }
 
     .brand-sub {
-      font-family: "Cinzel", serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.22em;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--ink-soft);
+      color: var(--muted);
     }
 
     .nav-links {
       display: flex;
-      gap: 1.6rem;
-      font-size: 0.78rem;
+      gap: 1.7rem;
+      font-size: 0.75rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
     }
@@ -85,365 +108,502 @@
     }
 
     .nav-links a::after {
-      content: "";
+      content: '';
       position: absolute;
       left: 0;
       bottom: 0;
       width: 0;
       height: 1px;
-      background: var(--accent-gold);
-      transition: width 0.2s ease;
+      background: linear-gradient(to right, var(--gold), var(--rose));
+      transition: width 0.24s ease;
     }
 
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover::after {
+      width: 100%;
+    }
 
-    main {
-      max-width: 1120px;
+    .page-wrap {
+      max-width: 1160px;
       margin: 0 auto;
-      padding: 2.4rem 1.5rem 3.5rem;
+      padding: 2.4rem 1.75rem 3.5rem;
     }
 
-    section { margin-bottom: 3.4rem; scroll-margin-top: 4.5rem; }
-
-    /* Hero */
-    .hero {
-      border-radius: 28px;
-      overflow: hidden;
-      border: 1px solid var(--border-soft);
+    .panel {
       background:
-        linear-gradient(to bottom, rgba(5,5,7,0.2), rgba(5,5,7,0.95)),
-        radial-gradient(circle at top left, rgba(197,163,106,0.15), transparent 70%);
-      position: relative;
-      isolation: isolate;
-    }
-
-    .hero::before {
-      /* Replace this URL with the uploaded hero image when you host it */
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        url("hero-midnight-roses.jpg") center/cover no-repeat,
-        radial-gradient(circle at center, #111 0, #000 70%);
-      opacity: 0.55;
-      mix-blend-mode: screen;
-      z-index: -1;
-    }
-
-    .hero-inner {
-      padding: 3.1rem 2.6rem 3.4rem;
-      max-width: 34rem;
-    }
-
-    .hero-kicker {
-      font-size: 0.7rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 0.8rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .hero-kicker span {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: var(--accent-gold);
-      box-shadow: 0 0 18px rgba(197,163,106,0.9);
-    }
-
-    .hero-title {
-      font-family: "Cinzel", serif;
-      font-size: clamp(2.4rem, 4.4vw, 3.3rem);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      margin-bottom: 0.3rem;
-    }
-
-    .hero-tagline {
-      font-size: 0.92rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-body {
-      font-size: 0.98rem;
-      color: var(--ink-soft);
-      max-width: 30rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 0.68rem 1.9rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border: 1px solid var(--accent-gold);
-      background: transparent;
-      color: var(--ink);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      transition: all 0.22s ease;
-    }
-
-    .btn-primary {
-      background: radial-gradient(circle at top, #f5ebd5, var(--accent-gold));
-      color: #1a1309;
-      border-color: transparent;
-      box-shadow: 0 0 22px rgba(197,163,106,0.55);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 30px rgba(197,163,106,0.7);
-    }
-
-    .btn-ghost {
-      background: rgba(11,9,14,0.8);
-      color: var(--ink-soft);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(24,18,32,0.95);
-    }
-
-    /* Section headings */
-    .section-kicker {
-      font-size: 0.72rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 0.5rem;
-    }
-
-    .section-heading {
-      font-family: "Cinzel", serif;
-      font-size: 1.5rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-body {
-      font-size: 0.96rem;
-      color: var(--ink-soft);
-      max-width: 36rem;
-      margin-bottom: 1.8rem;
-    }
-
-    /* Collections grid */
-    .collections-panel {
-      background: radial-gradient(circle at top left, rgba(197,163,106,0.18), transparent 60%),
-                  linear-gradient(to bottom, #100b16, #050307);
-      border-radius: 24px;
+        radial-gradient(circle at top left, rgba(214, 178, 113, 0.16), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(177, 72, 91, 0.2), transparent 60%),
+        linear-gradient(145deg, #050308, #140c18 55%, #050308);
+      border-radius: 26px;
       border: 1px solid var(--border-soft);
-      padding: 2.1rem 2rem 2.4rem;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 1.4rem;
-    }
-
-    @media (max-width: 880px) {
-      .nav { flex-direction: column; align-items: flex-start; }
-      .grid-3 { grid-template-columns: minmax(0,1fr); }
-      .hero-inner { padding: 2.4rem 1.7rem 2.8rem; }
-    }
-
-    .card {
-      background: radial-gradient(circle at top, rgba(61,25,63,0.9), rgba(5,3,7,0.96));
-      border-radius: 18px;
-      border: 1px solid rgba(197,163,106,0.35);
-      padding: 1.25rem 1.2rem 1.4rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.55rem;
+      padding: 2.5rem 2.3rem 2.8rem;
+      box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
     }
 
-    .card::before {
-      content: "";
+    .panel::before {
+      content: '';
       position: absolute;
-      inset: 0;
-      opacity: 0.12;
+      inset: -30%;
+      opacity: 0.32;
       background:
-        radial-gradient(circle at top right, rgba(255,255,255,0.2), transparent 55%),
-        radial-gradient(circle at bottom left, rgba(123,31,43,0.6), transparent 70%);
+        radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.04), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(150, 86, 157, 0.2), transparent 55%);
       mix-blend-mode: screen;
       pointer-events: none;
     }
 
-    .card-label {
-      font-size: 0.64rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
+    .panel-inner {
+      position: relative;
+      z-index: 1;
     }
 
-    .card-title {
-      font-family: "Cinzel", serif;
-      font-size: 1.12rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-    }
-
-    .card-text {
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin-top: 0.4rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .pill {
+    .kicker {
       font-size: 0.7rem;
-      padding: 0.18rem 0.7rem;
-      border-radius: 999px;
-      background: rgba(5,5,8,0.75);
-      border: 1px solid rgba(197,163,106,0.55);
-      color: var(--ink-soft);
-    }
-
-    .card-link {
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-top: auto;
+      letter-spacing: 0.26em;
+      color: var(--muted);
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      color: var(--accent-gold);
+      gap: 0.5rem;
+      margin-bottom: 0.9rem;
     }
 
-    .card-link span { font-size: 0.9rem; }
-
-    /* Botanica section */
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.5fr);
-      gap: 2rem;
-      align-items: flex-start;
-    }
-
-    @media (max-width: 880px) {
-      .two-col { grid-template-columns: minmax(0,1fr); }
-    }
-
-    .botanica-panel {
-      background: linear-gradient(135deg, #120b14, #050406);
-      border-radius: 24px;
-      border: 1px solid var(--border-soft);
-      padding: 2.1rem 2rem 2.3rem;
-    }
-
-    .list-soft {
-      list-style: none;
-      font-size: 0.9rem;
-      color: var(--ink-soft);
-    }
-
-    .list-soft li {
-      margin-bottom: 0.7rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.55rem;
-    }
-
-    .list-soft span.bullet {
-      margin-top: 0.45rem;
-      width: 4px;
-      height: 4px;
+    .kicker-dot {
+      width: 7px;
+      height: 7px;
       border-radius: 999px;
-      background: var(--accent-gold);
-      box-shadow: 0 0 10px rgba(197,163,106,0.7);
+      background: radial-gradient(circle at 30% 0, #fff, var(--gold));
+      box-shadow: 0 0 18px rgba(214, 178, 113, 0.8);
     }
 
-    .recipe-card {
-      background: radial-gradient(circle at top, rgba(123,31,43,0.6), rgba(5,5,7,0.96));
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.6rem, 5vw, 3.6rem);
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 0.85rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-copy {
+      max-width: 38rem;
+      font-size: 0.98rem;
+      color: var(--ink);
+      margin-bottom: 2.1rem;
+    }
+
+    .hero-copy strong {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 0.7rem 1.9rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.19em;
+      border: 1px solid var(--gold);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--ink);
+      transition: all 0.22s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top, #f7f1e8, var(--gold));
+      color: #201217;
+      border-color: transparent;
+      box-shadow: 0 0 26px rgba(214, 178, 113, 0.7);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 30px rgba(214, 178, 113, 0.88);
+    }
+
+    .btn-ghost {
+      background: rgba(10, 7, 13, 0.7);
+      border-color: rgba(195, 181, 207, 0.5);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--ink);
+    }
+
+    .section {
+      margin-top: 3.2rem;
+    }
+
+    .section-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 1.45rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 0.6rem;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 34rem;
+      margin-bottom: 1.7rem;
+    }
+
+    /* Collections grid */
+    .collections-panel {
+      background:
+        radial-gradient(circle at top right, rgba(91, 138, 106, 0.18), transparent 60%),
+        linear-gradient(150deg, #08050b, #1a111f 55%, #08050b);
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1.4rem;
+    }
+
+    @media (max-width: 1040px) {
+      .collections-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .collections-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .collection-card {
+      background:
+        radial-gradient(circle at top, rgba(214, 178, 113, 0.14), transparent 65%),
+        linear-gradient(145deg, rgba(20, 13, 26, 0.92), rgba(10, 6, 14, 0.98));
       border-radius: 18px;
-      border: 1px solid rgba(197,163,106,0.6);
-      padding: 1.1rem 1.2rem 1.3rem;
+      border: 1px solid rgba(214, 178, 113, 0.25);
+      padding: 1.1rem 1rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
       position: relative;
       overflow: hidden;
     }
 
-    .recipe-title {
-      font-family: "Cinzel", serif;
+    .collection-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+    }
+
+    .collection-title {
+      font-family: 'Cinzel', serif;
       font-size: 1rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .collection-copy {
+      font-size: 0.85rem;
+      color: var(--muted);
+      flex: 1;
+    }
+
+    .collection-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+
+    .tag-pill {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid rgba(195, 181, 207, 0.6);
+      color: var(--muted);
+      background: rgba(6, 3, 9, 0.8);
+    }
+
+    .collection-cta {
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Botanica section */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(0, 2.1fr);
+      gap: 2.4rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 880px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .botanica-panel {
+      background:
+        radial-gradient(circle at top left, rgba(91, 138, 106, 0.26), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(121, 18, 36, 0.28), transparent 60%),
+        linear-gradient(145deg, #050308, #150f1a 60%, #050308);
+    }
+
+    .botanica-copy {
+      font-size: 0.93rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .botanica-note {
+      font-size: 0.78rem;
+      color: rgba(195, 181, 207, 0.9);
+      margin-top: 0.8rem;
+      border-left: 1px solid rgba(195, 181, 207, 0.4);
+      padding-left: 0.75rem;
+    }
+
+    .herb-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 640px) {
+      .herb-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .herb-card {
+      background:
+        linear-gradient(145deg, rgba(17, 11, 23, 0.96), rgba(7, 3, 11, 0.98));
+      border-radius: 15px;
+      border: 1px solid rgba(91, 138, 106, 0.5);
+      padding: 0.85rem 0.9rem 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .herb-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+
+    .herb-line {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .herb-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.25rem;
+    }
+
+    .herb-tag {
+      font-size: 0.7rem;
+      padding: 0.18rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(4, 3, 6, 0.9);
+      border: 1px solid rgba(91, 138, 106, 0.5);
+      color: var(--muted);
+    }
+
+    .blend-card {
+      margin-top: 1.3rem;
+      background:
+        radial-gradient(circle at top left, rgba(214, 178, 113, 0.18), transparent 60%),
+        linear-gradient(135deg, #120a16, #25121d);
+      border-radius: 18px;
+      border: 1px solid rgba(214, 178, 113, 0.45);
+      padding: 1rem 1.1rem 1.1rem;
+    }
+
+    .blend-title {
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 0.4rem;
+      color: var(--gold);
     }
 
-    .recipe-tag {
-      font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 0.5rem;
-    }
-
-    .recipe-notes {
-      font-size: 0.88rem;
-      color: var(--ink-soft);
-      margin-bottom: 0.8rem;
-    }
-
-    .recipe-line {
-      font-size: 0.86rem;
-      color: var(--ink);
+    .blend-line {
+      font-size: 0.83rem;
+      color: var(--muted);
     }
 
     /* About & contact */
     .about-panel {
-      background: radial-gradient(circle at top left, rgba(61,25,63,0.85), transparent 70%),
-                  linear-gradient(to bottom, #050307, #050307);
-      border-radius: 24px;
-      border: 1px solid var(--border-soft);
-      padding: 2.2rem 2rem 2.4rem;
+      background:
+        radial-gradient(circle at top right, rgba(177, 72, 91, 0.26), transparent 62%),
+        linear-gradient(140deg, #050308, #1e131f 55%, #050308);
+    }
+
+    .about-copy {
+      font-size: 0.94rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .about-list {
+      list-style: none;
+      margin-top: 0.6rem;
+      padding-left: 0;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    .about-list li {
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .about-bullet {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      margin-top: 0.35rem;
+      background: radial-gradient(circle at 40% 0, #fff, var(--rose));
+      box-shadow: 0 0 10px rgba(177, 72, 91, 0.9);
     }
 
     .contact-panel {
-      background: linear-gradient(to right, #0b070d, #151018);
-      border-radius: 22px;
-      border: 1px solid rgba(197,163,106,0.45);
-      padding: 1.6rem 2rem 1.8rem;
+      background:
+        radial-gradient(circle at top left, rgba(91, 138, 106, 0.18), transparent 55%),
+        linear-gradient(150deg, #050308, #100a16 55%, #050308);
+    }
+
+    .contact-copy {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .contact-highlight {
+      font-size: 0.9rem;
+      color: var(--gold);
+      word-break: break-all;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.6fr);
+      gap: 2.1rem;
+    }
+
+    @media (max-width: 840px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .social-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .chip {
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(214, 178, 113, 0.4);
+      background: rgba(6, 4, 9, 0.88);
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid rgba(214, 178, 113, 0.24);
+      margin-top: 3.3rem;
+      padding: 1.7rem 1.75rem 1.4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      max-width: 1160px;
+      margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       gap: 1.2rem;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.9rem;
-      color: var(--ink-soft);
     }
 
-    footer {
-      border-top: 1px solid rgba(197,163,106,0.28);
-      padding: 1.7rem 1.5rem 1.1rem;
+    .footer-brand {
+      font-family: 'Cinzel', serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink);
+    }
+
+    .footer-note {
       font-size: 0.78rem;
-      color: var(--ink-soft);
-      text-align: center;
+      color: var(--muted);
+      max-width: 18rem;
+      text-align: right;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 720px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        row-gap: 0.7rem;
+      }
+
+      .panel {
+        padding: 2rem 1.6rem 2.4rem;
+      }
+
+      .page-wrap {
+        padding-inline: 1.2rem;
+      }
+
+      .hero-copy {
+        font-size: 0.92rem;
+      }
     }
   </style>
 </head>
@@ -452,7 +612,7 @@
     <div class="nav">
       <div class="brand-lockup">
         <div class="brand-main">MIDNIGHT GARDEN</div>
-        <div class="brand-sub">BY MURPHY MADE</div>
+        <div class="brand-sub">BY MURPHY MADE &nbsp;·&nbsp; DARK FEMININE PRINT-ON-DEMAND</div>
       </div>
       <nav class="nav-links">
         <a href="#home">Home</a>
@@ -464,24 +624,26 @@
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
-    <section id="home">
-      <div class="hero">
-        <div class="hero-inner">
-          <div class="hero-kicker">
-            <span></span>
+  <main class="page-wrap">
+    <!-- HERO / HOME -->
+    <section id="home" class="section">
+      <div class="panel">
+        <div class="panel-inner">
+          <div class="kicker">
+            <span class="kicker-dot"></span>
             DARK FEMININE PRINT-ON-DEMAND
           </div>
-          <h1 class="hero-title">Midnight Garden</h1>
-          <div class="hero-tagline">Mystical Home Décor & Botanical Collections</div>
-          <p class="hero-body">
+          <h1 class="hero-title">MIDNIGHT GARDEN</h1>
+          <p class="hero-subtitle">MYSTICAL HOME DÉCOR · BOTANICAL COLLECTIONS</p>
+          <p class="hero-copy">
             A digital boutique for witches, soft villains and velvet-blooded romantics.
             <strong>Every piece is made-to-order</strong> through premium print-on-demand:
-            art prints, altar textiles, journals and statement apparel in black, gold, plum and rose.
+            altar art, wall prints, ritual textiles, journals and statement apparel in black,
+            gold, plum and rose. Designed for women who bloom in the dark and like their
+            luxury a little feral.
           </p>
-          <div class="btn-row">
-            <a href="#collections" class="btn btn-primary">Shop the Collections</a>
+          <div class="hero-actions">
+            <a href="#collections" class="btn btn-primary">Shop the collections</a>
             <a href="#botanica" class="btn btn-ghost">Enter the Midnight Botanica</a>
           </div>
         </div>
@@ -489,173 +651,278 @@
     </section>
 
     <!-- COLLECTIONS -->
-    <section id="collections">
-      <div class="collections-panel">
-        <div class="section-kicker">The storefront</div>
-        <h2 class="section-heading">Curated Collections</h2>
-        <p class="section-body">
-          Everything here is <strong>print-on-demand</strong> and online-only.
-          No inventory, no clutter, just made-to-order pieces that arrive when the ritual calls for them.
-        </p>
-        <div class="grid-3">
-          <!-- Wall Art -->
-          <article class="card">
-            <div class="card-label">Collection I</div>
-            <h3 class="card-title">Velvet Wall Altars</h3>
-            <p class="card-text">
-              Museum-grade prints: black roses, bone-white hands, crystal balls, crescent moons and gilded botanicals.
-              Built for gallery walls and bedroom portals.
-            </p>
-            <div class="pill-row">
-              <span class="pill">Roses & Thorns</span>
-              <span class="pill">Celestial Maps</span>
-              <span class="pill">Ancestral Portraits</span>
-            </div>
-            <a class="card-link" href="#"><span>View art prints</span> →</a>
-          </article>
+    <section id="collections" class="section">
+      <div class="panel collections-panel">
+        <div class="panel-inner">
+          <h2 class="section-heading">Collections</h2>
+          <p class="section-sub">
+            Built for print-on-demand: each design is crafted once, then conjured on-demand
+            onto canvas, textiles, paper or fabric. No overstock, no waste, just slow
+            decadent witchcraft on beautiful things.
+          </p>
 
-          <!-- Planners & Stationery -->
-          <article class="card">
-            <div class="card-label">Collection II</div>
-            <h3 class="card-title">Luxe Witchcraft Stationery</h3>
-            <p class="card-text">
-              Dark feminine planners, ritual journals and grimoires wrapped in velvet palettes: black, oxblood, orchid and antique gold.
-              Perfect for moon cycles, money magic and soft revenge arcs.
-            </p>
-            <div class="pill-row">
-              <span class="pill">Yearly Planner</span>
-              <span class="pill">Shadow Journal</span>
-              <span class="pill">Ritual Pages</span>
-            </div>
-            <a class="card-link" href="#"><span>View journals</span> →</a>
-          </article>
+          <div class="collections-grid">
+            <!-- Art Prints -->
+            <article class="collection-card">
+              <div class="collection-label">Collection I</div>
+              <h3 class="collection-title">Altars & Art Prints</h3>
+              <p class="collection-copy">
+                High-resolution artwork for walls, altars and reading nooks. Roses, thorns,
+                black cats and bone-white moons printed on museum-grade paper or canvas.
+              </p>
+              <div class="collection-tags">
+                <span class="tag-pill">Gothic florals</span>
+                <span class="tag-pill">Celestial diagrams</span>
+                <span class="tag-pill">Velvet black backdrops</span>
+              </div>
+              <div class="collection-cta">View print designs →</div>
+            </article>
 
-          <!-- Apparel & Home -->
-          <article class="card">
-            <div class="card-label">Collection III</div>
-            <h3 class="card-title">Apparel & Midnight Home</h3>
-            <p class="card-text">
-              Old-money witch uniforms: embroidered tees, satin throw pillows, altar cloths and tote bags printed with sigils, bones and black cats.
-            </p>
-            <div class="pill-row">
-              <span class="pill">Black Cat Sigils</span>
-              <span class="pill">Bone Motifs</span>
-              <span class="pill">Velvet Pillows</span>
-            </div>
-            <a class="card-link" href="#"><span>View apparel & décor</span> →</a>
-          </article>
+            <!-- Apparel -->
+            <article class="collection-card">
+              <div class="collection-label">Collection II</div>
+              <h3 class="collection-title">Apparel & Soft Armor</h3>
+              <p class="collection-copy">
+                Print-on-demand tees, hoodies and slip-dress graphics for women who prefer
+                their basics with a side of blood-red lips and old-money sigils.
+              </p>
+              <div class="collection-tags">
+                <span class="tag-pill">Shadow-soft cotton</span>
+                <span class="tag-pill">Gold linework</span>
+                <span class="tag-pill">Subtle witch motifs</span>
+              </div>
+              <div class="collection-cta">Browse apparel →</div>
+            </article>
+
+            <!-- Journals -->
+            <article class="collection-card">
+              <div class="collection-label">Collection III</div>
+              <h3 class="collection-title">Journals & Stationery</h3>
+              <p class="collection-copy">
+                Lined, dotted and ritual-ready journals with dark floral covers, crescent
+                spines and satin-ink pages for spells, budgets and shadow work alike.
+              </p>
+              <div class="collection-tags">
+                <span class="tag-pill">Shadow work</span>
+                <span class="tag-pill">Grimoire pages</span>
+                <span class="tag-pill">Lunar trackers</span>
+              </div>
+              <div class="collection-cta">See journal designs →</div>
+            </article>
+
+            <!-- Home décor -->
+            <article class="collection-card">
+              <div class="collection-label">Collection IV</div>
+              <h3 class="collection-title">Home Décor & Curiosities</h3>
+              <p class="collection-copy">
+                Pillows, blankets and small altar textiles dripping in roses, vines,
+                sigils and soft-focus bones. For living rooms that feel like velvet-lined
+                covens.
+              </p>
+              <div class="collection-tags">
+                <span class="tag-pill">Pillows & throws</span>
+                <span class="tag-pill">Altar cloths</span>
+                <span class="tag-pill">Seasonal drops</span>
+              </div>
+              <div class="collection-cta">Explore home décor →</div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- BOTANICA -->
-    <section id="botanica">
-      <div class="botanica-panel two-col">
-        <div>
-          <div class="section-kicker">Midnight botanica</div>
-          <h2 class="section-heading">Ritual Botanicals & Smoke-Free Altars</h2>
-          <p class="section-body">
-            Inspired by your lavender, mullein, damiana, blue lotus, chamomile and peppermint blends,
-            the Midnight Botanica line turns those plants into <strong>art, labels and altar décor</strong>
-            instead of loose smoke. Think illustrated recipe prints, apothecary-style labels and ritual cards.
-          </p>
-          <ul class="list-soft">
-            <li>
-              <span class="bullet"></span>
-              <div>
-                <strong>Botanical Recipe Prints</strong><br>
-                Frame-worthy art that lists herbs, intentions and affirmations for each blend.
-              </div>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <div>
-                <strong>Apothecary Label Sets</strong><br>
-                Printable labels for jars, tins and altar drawers in black, gold and bruised-orchid purple.
-              </div>
-            </li>
-            <li>
-              <span class="bullet"></span>
-              <div>
-                <strong>Ritual Cards</strong><br>
-                Mini cards with blend names, correspondences and self-care prompts for spa-day altars.
-              </div>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <div class="recipe-card">
-            <div class="recipe-tag">Signature series</div>
-            <div class="recipe-title">“The Midnight Garden” Blend</div>
-            <p class="recipe-notes">
-              Turned into a framed print or label set, not a how-to guide.
-              A soft-power mix for women who water themselves first.
+    <!-- MIDNIGHT BOTANICA -->
+    <section id="botanica" class="section">
+      <div class="panel botanica-panel">
+        <div class="panel-inner two-col">
+          <div>
+            <h2 class="section-heading">Midnight Botanica</h2>
+            <p class="section-sub">
+              The herbal heart of the brand: smoky florals, soft lungs and altar-side tea.
+              Inspired by the blends you actually use: lavender, mullein, chamomile,
+              peppermint, damiana and blue lotus.
             </p>
-            <p class="recipe-line">★ Lavender · for nervous system mercy</p>
-            <p class="recipe-line">★ Mullein · for clear breath & boundaries</p>
-            <p class="recipe-line">★ Damiana · for warmth, joy & flirtation with life</p>
-            <p class="recipe-line">★ Blue Lotus · for dream gates & intuition</p>
-            <p class="recipe-line">★ Chamomile · for rest without collapse</p>
-            <p class="recipe-line">★ Peppermint · for clarity, focus & fresh starts</p>
-            <p class="recipe-notes" style="margin-top:0.9rem;">
-              Each product in this line is a <strong>visual spell</strong>:
-              art to hang, cards to pull, labels to dress your jars – all printed on demand.
+            <p class="botanica-copy">
+              Midnight Botanica is where ritual meets respiratory common sense. Each blend
+              is designed for <strong>aesthetic and ritual use</strong> first – labels,
+              artwork, recipe cards and print-on-demand posters – not as medical advice.
+              Think “botanical mood board” you can frame, journal with or build gentle
+              personal rituals around.
             </p>
+            <div class="blend-card">
+              <div class="blend-title">Signature Blend · Velvet Lungs</div>
+              <p class="blend-line">
+                A balanced base featuring mullein and marshmallow leaf, lifted by lavender
+                and chamomile, with a whisper of peppermint for clarity. Designed as a
+                <em>ritual concept blend</em> for print, zines and recipe cards – a visual
+                love letter to leaving gas-station nonsense behind.
+              </p>
+            </div>
+            <p class="botanica-note">
+              Nothing on this site is a substitute for medical care, diagnosis or quitting
+              aids. Herbs can interact with health conditions and medications – always do
+              your own research and consult a professional before inhaling or ingesting
+              anything new.
+            </p>
+          </div>
+
+          <div>
+            <div class="herb-grid">
+              <div class="herb-card">
+                <div class="herb-name">Lavender</div>
+                <div class="herb-line">Soft floral, gentle unwind, pairs beautifully with deep plum visuals and moon rituals.</div>
+                <div class="herb-tags">
+                  <span class="herb-tag">Soothing</span>
+                  <span class="herb-tag">Dream work</span>
+                </div>
+              </div>
+
+              <div class="herb-card">
+                <div class="herb-name">Mullein</div>
+                <div class="herb-line">The classic base herb – fluffy, neutral, ideal for “tobacco-replacement” themed art & recipes.</div>
+                <div class="herb-tags">
+                  <span class="herb-tag">Base leaf</span>
+                  <span class="herb-tag">Smoke rituals</span>
+                </div>
+              </div>
+
+              <div class="herb-card">
+                <div class="herb-name">Chamomile</div>
+                <div class="herb-line">Golden, honey-soft and grassy. Excellent for spa-day blends and calm-but-not-sedated vibes.</div>
+                <div class="herb-tags">
+                  <span class="herb-tag">Soft gold</span>
+                  <span class="herb-tag">Daytime relax</span>
+                </div>
+              </div>
+
+              <div class="herb-card">
+                <div class="herb-name">Peppermint</div>
+                <div class="herb-line">Cooling brightness that cuts through heaviness. Great accent in both smoke and tea concept art.</div>
+                <div class="herb-tags">
+                  <span class="herb-tag">Clarity</span>
+                  <span class="herb-tag">Air element</span>
+                </div>
+              </div>
+
+              <div class="herb-card">
+                <div class="herb-name">Damiana</div>
+                <div class="herb-line">Sultry, slightly spicy and traditionally associated with warmth, mood and sensual rituals.</div>
+                <div class="herb-tags">
+                  <span class="herb-tag">Heat</span>
+                  <span class="herb-tag">Dark romance</span>
+                </div>
+              </div>
+
+              <div class="herb-card">
+                <div class="herb-name">Blue Lotus</div>
+                <div class="herb-line">Dream-temple energy. Ethereal, watery, excellent centerpiece for your higher-tier blends.</div>
+                <div class="herb-tags">
+                  <span class="herb-tag">Dream portals</span>
+                  <span class="herb-tag">Luxury herb</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
-      <div class="about-panel two-col">
-        <div>
-          <div class="section-kicker">The house behind the garden</div>
-          <h2 class="section-heading">Murphy Made</h2>
-          <p class="section-body">
-            Murphy Made is the parent company and quiet engine behind Midnight Garden:
-            a studio for women who are <strong>done being reasonable</strong> about their softness, power and money.
-            The empire is built in layers: digital products, print-on-demand art and future brands under the same umbrella.
-          </p>
-        </div>
-        <div>
-          <p class="section-body">
-            Midnight Garden is the first daughter brand: a dark-feminine storefront for planners, art and botanica.
-            Everything is crafted to feel like stepping into a private library where the roses have teeth
-            and the wallpaper remembers your name.
-          </p>
+    <section id="about" class="section">
+      <div class="panel about-panel">
+        <div class="panel-inner two-col">
+          <div>
+            <h2 class="section-heading">About the Studio</h2>
+            <p class="about-copy">
+              Midnight Garden by Murphy Made is the house where your spreadsheets, spell
+              jars and soft-girl villain era all live together without arguing. It’s a
+              print-on-demand studio built for women who are tired, clever and entirely
+              done pretending they’re not powerful.
+            </p>
+            <p class="about-copy">
+              Every design starts as a ritual: a color story, a plant, a feeling. From
+              there it becomes wall art, journals, textiles or digital tools – letting you
+              build a life that feels like an altar, not an accident.
+            </p>
+          </div>
+          <div>
+            <ul class="about-list">
+              <li>
+                <span class="about-bullet"></span>
+                <span>Parent company: <strong>Murphy Made</strong> – the umbrella for digital products, services and future brands.</span>
+              </li>
+              <li>
+                <span class="about-bullet"></span>
+                <span>The Midnight Garden: dark feminine flagship focused on art, décor and ritual-adjacent tools.</span>
+              </li>
+              <li>
+                <span class="about-bullet"></span>
+                <span>Rooted in Black cats, roses, thorns, bones, silk, blood-red lips and old-world elegance.</span>
+              </li>
+              <li>
+                <span class="about-bullet"></span>
+                <span>Designed to play nicely with Etsy, POD providers and whatever new empire wing you decide to build next.</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
-      <div class="contact-panel">
-        <div>
-          <div class="section-kicker">Contact</div>
-          <h2 class="section-heading" style="font-size:1.1rem;margin-bottom:0.4rem;">Enter the Garden</h2>
-          <p>
-            For custom requests, collaborations or wholesale inquiries, email:<br />
-            <strong><a href="mailto:TheeMidnightGarden@gmail.com">TheeMidnightGarden@gmail.com</a></strong>
-          </p>
-        </div>
-        <div>
-          <p>
-            Online-only, print-on-demand studio.<br />
-            No storefront. Just rituals shipped to your door.
-          </p>
+    <section id="contact" class="section">
+      <div class="panel contact-panel">
+        <div class="panel-inner contact-grid">
+          <div>
+            <h2 class="section-heading">Contact</h2>
+            <p class="contact-copy">
+              Custom commission ideas, wholesale questions, collaborations or ritual-adjacent
+              chaos? Slide into the inbox like a dignified menace:
+            </p>
+            <p class="contact-highlight">
+              <a href="mailto:TheeMidnightGarden@gmail.com">TheeMidnightGarden@gmail.com</a>
+            </p>
+            <p class="contact-copy" style="margin-top:0.8rem;">
+              For order-specific questions, include your platform (Etsy, POD provider, etc.)
+              and order number so the response can be fast and ruthless.
+            </p>
+          </div>
+          <div>
+            <p class="contact-copy">
+              Midnight Garden is an online-only studio. No physical storefront, just a
+              constellation of listings, launches and limited-run drops.
+            </p>
+            <div class="social-row">
+              <span class="chip">Etsy · The Midnight Garden US</span>
+              <span class="chip">Instagram · @themidnightgarden</span>
+              <span class="chip">Pinterest · Dark Feminine Boards</span>
+            </div>
+            <p class="botanica-note" style="margin-top:1.1rem;">
+              Social handles are placeholders – adjust to match your real accounts as you
+              claim them. The sooner you lock the names, the harder it is for anyone to
+              knock off your vibe.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    © <span id="year"></span> Midnight Garden by Murphy Made · Dark feminine print-on-demand studio.
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">MIDNIGHT GARDEN · BY MURPHY MADE</div>
+        <div>Dark feminine print-on-demand · Botanical & occult décor</div>
+      </div>
+      <div class="footer-note">
+        © <span id="year"></span> Midnight Garden by Murphy Made. All artwork, blends & copy are original to this studio. Thieves will be hexed with boring lives.
+      </div>
+    </div>
   </footer>
 
   <script>
-    // lazy little year updater so you don't have to touch it again
-    document.getElementById("year").textContent = new Date().getFullYear();
+    // Set year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
